@@ -1,12 +1,16 @@
-#include <math.h>
 #define AryaKusumah_dev.h
 #ifndef AryaKusumah_dev.h
+#include <math.h>
 
-int pertambahan(int a, int b){
-	int j;
-	j = a + b;
-	printf("hasil = ");
-	return 0; 
+void pertambahan(int *a, int *b){
+	scanf("%d", &(*a));
+	scanf("%d", &(*b));
 }
+void proses(int a, int b, int hasil){
+	return hasil = a + b; 
+}
+void output(int a, int b,){
+	printf ("hasil %d + %d = %if "); 
+} 
 
 #endif
