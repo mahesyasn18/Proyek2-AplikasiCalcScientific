@@ -1,5 +1,5 @@
-#ifndef adinda_dev_h
-#define adinda_dev_h
+#ifndef adinda_dev_H
+#define adinda_dev_H
 
 void inputbilangan(int *bilangansatu, int *bilangandua){
 	printf("Masukkan bilangan 1: ");

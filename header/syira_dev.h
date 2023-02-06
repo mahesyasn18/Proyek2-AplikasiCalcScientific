@@ -1,8 +1,8 @@
 #include <stdio.h>
-#ifndef syira_dev_h
-#define syira_dev_h
+#ifndef syira_dev_H
+#define syira_dev_H
 
-void input(int *A, int *B){
+void inputpengurangan(int *A, int *B){
 	printf("masukan bilangan pertama: ");
 	scanf("%d", &*A);
 	printf("masukan bilangan kedua: ");
@@ -10,11 +10,10 @@ void input(int *A, int *B){
 }
 
 int pengurangan(int bil1, int bil2, int hasil){
-	hasil = bil1 - bil2;
-	return 0;
+	return hasil = bil1 - bil2;
 }
 
-void output(int bil1, int bil2, int hasil){
+void outputpengurangan(int bil1, int bil2, int hasil){
 	printf("hasil dari %d - %d adalah: %d", bil1, bil2, hasil );
 }
 
