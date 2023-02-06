@@ -8,10 +8,10 @@ int inputAkar(int input){
 	return input;
 }
 
-float akar(int input){
+float calculateAkar(int input){
 	return sqrt(input);
 }
-void ProsesAkar(int input, float hasil){
-	printf("hasil akar %d adalah %2f",input, hasil );
+void OutputAkar(int input, float hasil){
+	printf("hasil akar %d adalah %g",input, hasil );
 }
 #endif
