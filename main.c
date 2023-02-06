@@ -18,8 +18,8 @@ int main(int argc, char *argv[]) {
 	scanf("%d", &pilihan);
 	if(pilihan == 6){
 		input = inputAkar(input);
-		hasil = akar(input);
-		ProsesAkar(input, hasil);
+		hasil = calculateAkar(input);
+		OutputAkar(input, hasil);
 		
 	}else{
 		printf("Maaf input yang anda Masukan Belum Ada");
