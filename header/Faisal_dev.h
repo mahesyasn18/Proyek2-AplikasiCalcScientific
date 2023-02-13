@@ -1,13 +1,8 @@
 #ifndef Faisal_dev_H
 #define Faisal_dev_H
+#include <math.h>
 
-
-void inputPangkat (int *a, int *b){
-	printf("Isi Angka yang Akan Dipangkatkan : ");
-    scanf("%d", &(*a));
-    printf("Masukkan pangkatnya : ");
-	scanf("%d", &(*b));
-}
+//operasi pangkat
 	
 int calculatepangkat(int x,int y,int hasil){
     int a,total=1;
@@ -16,10 +11,23 @@ int calculatepangkat(int x,int y,int hasil){
     }
     return total;
 }
-void outputpangkat(int a,int b,int h){
-	printf("hasil dari %d dipangkatkan %d adalah : %d ",a,b,h);
+
+//operasi persen
+
+float calculatepersen(int x,int y){
+    return (float)(x * 100) / y;
 }
+
+//operasi radian
+
+double calculate_sin(double sudut) {
+    return sin(sudut);
+}
+
+
 #endif
+
+
  
 
 
