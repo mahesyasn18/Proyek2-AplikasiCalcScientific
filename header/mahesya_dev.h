@@ -32,7 +32,7 @@ double acos(double x) {
 
 double acos_in_degrees(double x) {
     double acos_in_radians = acos(x);
-    return acos_in_radians * 180.0 / M_PI;
+    return acos_in_radians * 180.0 / PI;
 }
 
 
