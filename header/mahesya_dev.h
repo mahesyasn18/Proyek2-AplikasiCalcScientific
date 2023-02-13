@@ -12,6 +12,6 @@ float calculateAkar(int input){
 	return sqrt(input);
 }
 void OutputAkar(int input, float hasil){
-	printf("hasil akar %d adalah %g",input, hasil );
+	printf("hasil akar %d adalah %f",input, hasil );
 }
 #endif
