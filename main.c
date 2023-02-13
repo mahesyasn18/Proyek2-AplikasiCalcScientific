@@ -6,56 +6,97 @@
 #include "header\Faisal_dev.h"
 #include "header\AhmadFauzy_dev.h"
 #include "header\syira_dev.h"
+#include <ctype.h>
+#include <math.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
-int main(int argc, char *argv[]) {
-	int pilihan, input_1, input_2;
-	float hasil;
-	printf("Program Calculator Ilmiah\n");
-	printf("1. Penjumlahan\n");
-	printf("2. Pengurangan\n");
-	printf("3. Perkalian\n");
-	printf("4. Pembagian\n");
-	printf("5. Pangkat\n");
-	printf("6. Akar\n");
-	printf("Silahkan Pilih Menu : ");
-	scanf("%d", &pilihan);
-	if(pilihan==1){
-		system("cls");
-		pertambahan(&input_1, &input_2);
-		hasil = proses(input_1, input_2, hasil);
-		output(input_1,input_2,hasil);
-	}else if(pilihan==2){
-		system("cls");
-		inputpengurangan(&input_1, &input_2);
-		hasil = pengurangan(input_1, input_2, hasil);
-		outputpengurangan(input_1,input_2,hasil);
-	}else if(pilihan==3){
-		system("cls");
-		inputbilangan(&input_1, &input_2);
-		hasil = perkalian(input_1, input_2);
-		outputbilangan(input_1,input_2,hasil);
-	}else if(pilihan==4){
-		system("cls");
-		inputPembagian(&input_1, &input_2);
-		hasil = prosesPembagian(input_1, input_2);
-		outputPembagian(input_1,input_2,hasil);
-	}else if(pilihan==5){
-		system("cls");
-		inputPangkat(&input_1, &input_2);
-		hasil = calculatepangkat(input_1, input_2,hasil);
-		outputpangkat(input_1,input_2,hasil);
-	}else if(pilihan==6){
-		system("cls");
-		input_1=inputAkar(input_1);
-		hasil = calculateAkar(input_1);
-		OutputAkar(input_1,hasil);
-	}else{
-		printf("Maaf Input yang anda masukkan tidak ada di menu\n");
-	}
-
-
-	return 0;
+double perform_operation(double num1, double num2, char operator) {
+    switch (operator) {
+        case '^':
+            return calculatepangkat(num1, num2);
+        case '*':
+            return perkalian(num1,num2);
+        case '/':
+            return prosesPembagian(num1,num2);
+        case '+':
+            return proses(num1,num2);
+        case '-':
+            return pengurangan(num1,num2);
+        case 'v':
+        	return calculateRoot(num2,num1);
+        case 'c':
+        	return calculateArscin(num2);
+        default:
+            printf("Invalid operator: %c", operator);
+            exit(1);
+    }
 }
+
+int get_priority(char operator) {
+    switch (operator) {
+        case '^':
+        case'v':
+            return 3;
+        case '*':
+        case '/':
+            return 2;
+        case '+':
+        case '-':
+            return 1;
+        default:
+            printf("Invalid operator: %c", operator);
+            exit(1);
+    }
+}
+int main(int argc, char *argv[]) {
+    char inputan[100];
+    printf("Masukkan inputan: ");
+    scanf("%s", inputan);
+
+    double stack_num[100];
+    int stack_num_top = -1;
+    char stack_op[100];
+    int stack_op_top = -1;
+    int i;
+    for (i = 0; inputan[i]; i++) {
+        if (isdigit(inputan[i])) {
+            char number[100];
+            int number_top = 0;
+            while (isdigit(inputan[i]) || inputan[i] == '.') {
+                number[number_top++] = inputan[i++];
+            }
+            number[number_top] = '\0';
+            stack_num[++stack_num_top] = strtod(number, NULL);
+            i--;
+        } else if (inputan[i] == '(') {
+            stack_op[++stack_op_top] = inputan[i];
+        } else if (inputan[i] == ')') {
+            while (stack_op[stack_op_top] != '(') {
+                double num2 = stack_num[stack_num_top--];
+                double num1 = stack_num[stack_num_top--];
+                char operator = stack_op[stack_op_top--];
+                stack_num[++stack_num_top] = perform_operation(num1, num2, operator);
+            }
+            stack_op_top--;
+        } else {
+            while (stack_op_top >= 0 && get_priority(stack_op[stack_op_top]) >= get_priority(inputan[i])) {
+                double num2 = stack_num[stack_num_top--];
+                double num1 = stack_num[stack_num_top--];
+                char operator = stack_op[stack_op_top--];
+                stack_num[++stack_num_top] = perform_operation(num1, num2, operator);
+            }
+            stack_op[++stack_op_top] = inputan[i];
+	}	
+}
+while (stack_op_top >= 0) {
+    double num2 = stack_num[stack_num_top--];
+    double num1 = stack_num[stack_num_top--];
+    char operator = stack_op[stack_op_top--];
+    stack_num[++stack_num_top] = perform_operation(num1, num2, operator);
+}
+
+printf("Result: %g\n", stack_num[0]);
+return 0;
+}
+
 

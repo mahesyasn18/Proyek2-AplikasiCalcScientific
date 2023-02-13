@@ -2,20 +2,12 @@
 #ifndef syira_dev_H
 #define syira_dev_H
 
-void inputpengurangan(int *A, int *B){
-	printf("masukan bilangan pertama: ");
-	scanf("%d", &*A);
-	printf("masukan bilangan kedua: ");
-	scanf("%d", &*B);
+
+int pengurangan(int bil1, int bil2){
+	return bil1 - bil2;
 }
 
-int pengurangan(int bil1, int bil2, int hasil){
-	return hasil = bil1 - bil2;
-}
 
-void outputpengurangan(int bil1, int bil2, int hasil){
-	printf("hasil dari %d - %d adalah: %d", bil1, bil2, hasil );
-}
 
 #include <stdio.h>
 #include <math.h>
@@ -78,17 +70,6 @@ int hexatodeci() {
     return 0;  
 }
 
-int main(){
-	printf("1. decimal to hexa\n2. hexa to decimal\nmasukan pilihan: ");
-	scanf("%d",&x);
-	switch(x){
-	case 1:
-	decitohexa();
-	case 2:
-	hexatodeci();
-	}
-	return 0;
-}
 
 
 #endif
