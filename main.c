@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {
                 stack_num[++stack_num_top] = perform_operation(num1, num2, operator);
             }
             stack_op[++stack_op_top] = inputan[i];
-}
+	}	
 }
 while (stack_op_top >= 0) {
     double num2 = stack_num[stack_num_top--];

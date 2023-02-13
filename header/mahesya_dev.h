@@ -26,6 +26,15 @@ double calculateArscin(int angka){
     return atan2(sin(radians), sqrt(1 - sin(radians) * sin(radians)));
 }
 
+double acos(double x) {
+    return atan2(sqrt(1 - x * x), x);
+}
+
+double acos_in_degrees(double x) {
+    double acos_in_radians = acos(x);
+    return acos_in_radians * 180.0 / M_PI;
+}
+
 
 
 
