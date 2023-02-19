@@ -28,8 +28,13 @@ Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
+<<<<<<< HEAD
 CompilerSettings=0000000000000000000000000
 UnitCount=2
+=======
+CompilerSettings=0000000000000000001000000
+UnitCount=7
+>>>>>>> ddd9f5051e55b59998a56ca8c9b6f3d3f51e815a
 
 [VersionInfo]
 Major=1
@@ -39,14 +44,14 @@ Build=0
 LanguageID=1033
 CharsetID=1252
 CompanyName=
-FileVersion=
+FileVersion=1.0.0.0
 FileDescription=Developed using the Dev-C++ IDE
 InternalName=
 LegalCopyright=
 LegalTrademarks=
 OriginalFilename=
 ProductName=
-ProductVersion=
+ProductVersion=1.0.0.0
 AutoIncBuildNr=0
 SyncProduct=1
 
@@ -61,7 +66,61 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
+<<<<<<< HEAD
 FileName=AryaKusumah_dev.h
+=======
+FileName=header\mahesya_dev.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit3]
+FileName=header\adinda_dev.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit4]
+FileName=header\AhmadFauzy_dev.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit5]
+FileName=header\AryaKusumah_dev.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit6]
+FileName=header\Faisal_dev.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit7]
+FileName=header\syira_dev.h
+>>>>>>> ddd9f5051e55b59998a56ca8c9b6f3d3f51e815a
 CompileCpp=0
 Folder=
 Compile=1
