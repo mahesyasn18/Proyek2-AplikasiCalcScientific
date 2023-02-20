@@ -1,12 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-<<<<<<< HEAD
-#include "AryaKusumah_dev.h"
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main() {
-=======
 #include "header\mahesya_dev.h"
 #include "header\AryaKusumah_dev.h"
 #include "header\adinda_dev.h"
@@ -62,7 +58,7 @@ int main(int argc, char *argv[]) {
 	
 
 
->>>>>>> ddd9f5051e55b59998a56ca8c9b6f3d3f51e815a
+
 
 }
 

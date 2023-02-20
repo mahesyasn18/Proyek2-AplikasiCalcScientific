@@ -1,19 +1,6 @@
 # Project: Project1
 # Makefile created by Dev-C++ 5.11
 
-<<<<<<< HEAD
-CPP      = g++.exe
-CC       = gcc.exe
-WINDRES  = windres.exe
-OBJ      = main.o
-LINKOBJ  = main.o
-LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
-INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
-CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = "Kelompok 2 -Calc Scientific.exe"
-CXXFLAGS = $(CXXINCS) 
-CFLAGS   = $(INCS) 
-=======
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
@@ -25,7 +12,6 @@ CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program File
 BIN      = "Kelompok 2 -Calc Scientific.exe"
 CXXFLAGS = $(CXXINCS) -g3
 CFLAGS   = $(INCS) -g3
->>>>>>> ddd9f5051e55b59998a56ca8c9b6f3d3f51e815a
 RM       = rm.exe -f
 
 .PHONY: all all-before all-after clean clean-custom
