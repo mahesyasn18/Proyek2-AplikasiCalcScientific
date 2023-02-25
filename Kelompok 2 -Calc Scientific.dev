@@ -28,8 +28,13 @@ Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
+<<<<<<< HEAD
+CompilerSettings=0000000000000000000000000
+UnitCount=2
+=======
 CompilerSettings=0000000000000000001000000
 UnitCount=7
+>>>>>>> ddd9f5051e55b59998a56ca8c9b6f3d3f51e815a
 
 [VersionInfo]
 Major=1
@@ -61,6 +66,9 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
+<<<<<<< HEAD
+FileName=AryaKusumah_dev.h
+=======
 FileName=header\mahesya_dev.h
 CompileCpp=0
 Folder=
@@ -112,6 +120,7 @@ BuildCmd=
 
 [Unit7]
 FileName=header\syira_dev.h
+>>>>>>> ddd9f5051e55b59998a56ca8c9b6f3d3f51e815a
 CompileCpp=0
 Folder=
 Compile=1

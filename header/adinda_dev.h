@@ -4,57 +4,55 @@
 #define adinda_dev_H
 
 
-int perkalian(int bilangansatu, int bilangandua){
+double operasiPerkalian(double bilangansatu, double bilangandua){
 	return bilangansatu * bilangandua;
 }
 
-int faktorial(int input1){
-	int i, pembagi;
+double operasiFaktorial(double angka){
+	int i;
+	double pembagi;
 	
-	pembagi=input1;
+	pembagi=angka;
 	for(i=1;i<pembagi;i++){
-		input1=input1*i;
+		angka=angka*i;
 	}
 	
-	return input1;
+	return angka;
 }
 
-float sinus(float input1){
-	float result;
-	result=sin(input1);
+double operasiSinus(double angka){
+	double result;
+	result=sin(angka);
 	return result;
 }
 
-float cosinus(float input1){
-	float result;
-	result=cos(input1);
+double operasiCosinus(double angka){
+	double result;
+	result=cos(angka);
 	return result;
 }
 
-float tangen(float input1){
-	float result;
-	result=tan(input1);
+double operasiTangen(double angka){
+	double result;
+	result=tan(angka);
 	return result;
 }
 
-float konversi_fahrenheit(float input1){
-	float result;
-	
-	result=(9.0/5.0 * input1) + 32;
+double konversi_fahrenheit(double angka){
+	double result;
+	result=(9.0/5.0 * angka) + 32;
 	return result;
 }
 
-float konversi_kelvin(float input1){
-	float result;
-	
-	result=input1 + 273.15;
+double konversi_kelvin(double angka){
+	double result;
+	result=angka + 273.15;
 	return result;
 }
 
-float konversi_reamur(float input1){
+float konversi_reamur(float angka){
 	float result;
-	
-	result=input1 * (4.0/5.0) ;
+	result=angka * (4.0/5.0) ;
 	return result;
 }
 
