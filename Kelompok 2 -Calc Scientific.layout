@@ -1,15 +1,15 @@
 [Editors]
 <<<<<<< HEAD
 Order=1,0,2,5,4,3,6
-Focused=5
+Focused=0
 =======
 <<<<<<< HEAD
 Order=1,0
 Focused=4
 [Editor_0]
-CursorCol=34
-CursorRow=21
-TopLine=112
+CursorCol=14
+CursorRow=100
+TopLine=192
 LeftChar=1
 [Editor_2]
 CursorCol=1
@@ -22,7 +22,7 @@ CursorRow=7
 =======
 Order=1,0,2,5,4,3
 Focused=0
-TopLine=7
+TopLine=28
 LeftChar=1
 >>>>>>> 79ac42d552127483e03cce4740704c551db4b1e9
 [Editor_0]

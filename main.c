@@ -70,17 +70,28 @@ double prosesPerhitunganTrigonometri(double angka, char opera[]){
 	}
 	else if(strcmp(opera,"atan(")==0){
 		return operasiAtan(angka);
+	}else{
+		printf("Operator Tidak Diketahui: %s", opera);
+        exit(1);
 	}
 }
 double prosesPerhitunganLog(double num1, double num2, char opera[]){
 	if(strcmp(opera,"log(")==0){
 		return operasiLogaritma(num2,num1);
+	}else{
+		printf("Operator Tidak Diketahui: %c", opera);
+        exit(1);
 	}
 }
 
-double prosesFakt(double num1, char ope){
+double prosesSingleNum(double num1, char ope){
 	if(ope=='!'){
 		return operasiFaktorial(num1);
+	}else if(ope=='%'){
+		return operasipersen(num1);
+	}else{
+		printf("Operator Tidak Diketahui: %c", ope);
+        exit(1);
 	}
 }
 
@@ -104,7 +115,8 @@ int main(int argc, char *argv[]) {
 	  		num[num_top++]='\0';
 	        angka[++index_angka] = strtof(num,NULL);
 	    	i--;
-    	}else if (inputan[i] == 's' || inputan[i] == 'c' || inputan[i] == 't'|| inputan[i] == 'a'){
+    	}
+		else if (inputan[i] == 's' || inputan[i] == 'c' || inputan[i] == 't'|| inputan[i] == 'a'){
             char operator_trigono[6];
             int j=0;
             char nomor[100];
@@ -125,7 +137,7 @@ int main(int argc, char *argv[]) {
 			
 			angka[index_angka]=prosesPerhitunganTrigonometri(bilangan,operator_trigono);
 		}
-else if (inputan[i] == 'l'){
+		else if (inputan[i] == 'l'){
             char operator_log[6];
             int j=0;
             char nomor[100];
@@ -150,7 +162,13 @@ else if (inputan[i] == 'l'){
             double bilangan;
             bilangan = angka[index_angka];
             char opera = oper[index_operator--];
-            angka[index_angka]=prosesFakt(bilangan, opera);
+            angka[index_angka]=prosesSingleNum(bilangan, opera);
+        }else if (inputan[i] == '%') {
+            oper[++index_operator] = inputan[i];
+            double bilangan;
+            bilangan = angka[index_angka];
+            char opera = oper[index_operator--];
+            angka[index_angka]=prosesSingleNum(bilangan, opera);
         }
 		else if (inputan[i] == '(') {
             oper[++index_operator] = inputan[i];

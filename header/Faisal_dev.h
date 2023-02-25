@@ -14,12 +14,9 @@ double operasiPangkat(double x,double y){
 
 //operasi persen
 
-double calculatepersen(double x,double y){
-    return (x * 100) / y;
+double operasipersen(double num){
+	return num / 100.0;
 }
-
-
-
 
 #endif
 
