@@ -7,7 +7,7 @@
 //	scanf("%d", &(*b));
 //}
 
-double prosesPembagian(double x, double y){
+double operasiPembagian(double x, double y){
 	return (x / y);
 }
 
@@ -56,14 +56,13 @@ void output(double x){
 //	scanf("%f",&(*b));
 //}
 
-double operasiLogaritma(double a, double b){
-	if (b <= 0 || a <= 0) {
+double operasiLogaritma(double angka1, double angka2){
+	if (angka2 <= 0 || angka1 <= 0) {
         printf("Invalid input\n");
         return 1;
     }
 
-	 return log(b) / log(a);
-//	 return hasil;
+	 return log(angka2) / log(angka1);
 }
 
 //void Output(float a,float b, float hasil){

@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
 #include "header\mahesya_dev.h"
 #include "header\AryaKusumah_dev.h"
 #include "header\adinda_dev.h"
@@ -12,18 +15,20 @@
 
 double prosesPerhitungan(double angka1, double angka2, char operator) {
     switch (operator) {
+    	case '&':
+            return operasiModulus(angka1, angka2);
         case '^':
-            return calculatepangkat(angka1, angka2);
+            return operasiPangkat(angka1, angka2);
         case 'v':
             return operasiAkar(angka2, angka1);
         case '*':
             return operasiPerkalian(angka1, angka2);
         case '/':
-            return prosesPembagian(angka1, angka2);
+            return operasiPembagian(angka1, angka2);
         case '+':
             return operasiPenjumlahan(angka1, angka2);
         case '-':
-            return pengurangan(angka1, angka2);
+            return operasiPengurangan(angka1, angka2);
         default:
             printf("Operator Tidak Diketahui: %c", operator);
             exit(1);
@@ -33,7 +38,7 @@ double prosesPerhitungan(double angka1, double angka2, char operator) {
 int mencariPrioritas(char operator) {
 	if(operator == '(' ||operator == ')'){
 		return 0;
-	}else if(operator == '^'){
+	}else if(operator == '^'||operator == 'v'||operator == '&'){
 		return 3;
 	}else if(operator == '*' ||operator == '/' ){
 		return 2;
@@ -180,6 +185,7 @@ else if (inputan[i] == 'l'){
 	
 	return 0;
 	
+
 
 
 

@@ -4,7 +4,7 @@
 
 //operasi pangkat
 	
-double calculatepangkat(double x,double y){
+double operasiPangkat(double x,double y){
     double a,total=1;
      for(a=1;a<=y;a++){
         total=total*x;
