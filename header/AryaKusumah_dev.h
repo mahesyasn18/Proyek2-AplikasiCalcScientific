@@ -4,7 +4,7 @@
 #include <math.h>
 
 
-int proses(int a, int b){
+int prosesPenambahan(int a, int b){
 	return a + b; 
 }
 

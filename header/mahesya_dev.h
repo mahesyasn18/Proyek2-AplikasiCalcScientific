@@ -1,7 +1,13 @@
 #ifndef mahesya_dev_H
 #define mahesya_dev_H
 #include<math.h>
-#define PI 3.14159265358979323846	
+#define PI 3.14159265358979323846
+#include "header\mahesya_dev.h"
+#include "header\AryaKusumah_dev.h"
+#include "header\adinda_dev.h"
+#include "header\Faisal_dev.h"
+#include "header\AhmadFauzy_dev.h"
+#include "header\syira_dev.h"	
 
 double calculateRoot(double angka1, int angka2) {
    double low = 0, high = angka1, mid, prev;
@@ -53,13 +59,13 @@ double prosesPerhitungan(double angka1, double angka2, char operator) {
         case 'v':
             return calculateRoot(angka2, angka1);
         case '*':
-            return angka1 * angka2;
+            return perkalian(angka1, angka2);
         case '/':
-            return angka1 / angka2;
+            return prosesPembagian(angka1, angka2);
         case '+':
-            return angka1 + angka2;
+            return prosesPenambahan(angka1, angka2);
         case '-':
-            return angka1 - angka2;
+            return pengurangan(angka1, angka2);
         default:
             printf("Operator Tidak Diketahui: %c", operator);
             exit(1);
