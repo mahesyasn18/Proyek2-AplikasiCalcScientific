@@ -70,5 +70,34 @@ float operasi(float a, float b){
 //	printf("hasil dari log_%2f(%2f) adalah %2f",b,a,hasil);
 //}
 
+//konversi biner
+int decimalToBinary(int *decimal)
+{
+    int binary;
+    int i = 0;
+    int j;
+  
+    binary = *decimal % 2;
+    *decimal = *decimal / 2;
+    return binary;
+}
+
+//int main()
+//{
+//    int decimal,bin[32],i,j;
+//    i=0;
+//    j=0;
+//    
+//    printf("masukan angka: ");
+//    scanf("%d", &decimal);
+//    while(decimal>0){
+//    bin[i] = decimalToBinary(&decimal);
+//    i++;
+//	}
+//	printf("Binar dari angka tersebut adalah: ");
+//    for(j = i - 1; j >= 0; j--) {
+//	printf("%d",bin[j]);
+//	}
+
 
 #endif
