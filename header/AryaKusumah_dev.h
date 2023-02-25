@@ -4,17 +4,21 @@
 
 //operasi tambah
 int proses(int a, int b){
+	scanf("%d", &a);
+	scanf("%d", &b);
+	
 	return a + b; 
 }
 
-
-#endif
-
 //operasi modulus
-int modulus (x, y){
+int modulus (dividend, divisor, modulus){
+    scanf("%d", &dividend);
     
-    scanf("%d", &x);
-    scanf("%d", &y);
+    do{
+    	scanf("%d", &y);
+	} while (divisor == 0);
+	
+	modulus = dividend % divisor;
     
     return dividend % divisor;
 }
@@ -32,3 +36,4 @@ int modulus (x, y){
 	}
  }
 
+#endif
