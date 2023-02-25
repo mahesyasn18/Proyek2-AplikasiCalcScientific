@@ -4,8 +4,8 @@
 
 //operasi pangkat
 	
-int calculatepangkat(int x,int y){
-    int a,total=1;
+double calculatepangkat(double x,double y){
+    double a,total=1;
      for(a=1;a<=y;a++){
         total=total*x;
     }
@@ -14,15 +14,11 @@ int calculatepangkat(int x,int y){
 
 //operasi persen
 
-float calculatepersen(int x,int y){
-    return (float)(x * 100) / y;
+double calculatepersen(double x,double y){
+    return (x * 100) / y;
 }
 
-//operasi radian
 
-double calculate_sin(double sudut) {
-    return sin(sudut);
-}
 
 
 #endif

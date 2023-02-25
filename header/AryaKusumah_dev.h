@@ -4,7 +4,7 @@
 #include <math.h>
 
 
-int proses(int a, int b){
+double operasiPenjumlahan(double a, double b){
 	return a + b; 
 }
 
