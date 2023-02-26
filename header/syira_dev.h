@@ -1,47 +1,35 @@
 #include <stdio.h>
+#include <string.h>
+#include <math.h>
 #ifndef syira_dev_H
 #define syira_dev_H
 
 
-double operasiPengurangan(double bil1, double bil2){
-	return bil1 - bil2;
+double operasiPengurangan(double angka1, double angka2){
+	return angka1 - angka2;
 }
 
 
-
-#include <stdio.h>
-#include <math.h>
-#include <string.h>
-
-
-double OperasiSinus(double angle_degrees, double angle_radians,double sin_value)
+double operasiSinus(double bilangan)
 {
-    
-    printf("Masukkan sudut dalam derajat: ");
-    scanf("%lf", &angle_degrees);
-    
-    // Konversi sudut dari derajat ke radian
-    angle_radians = angle_degrees * M_PI / 180.0;
-    
-    sin_value = sin(angle_radians);
-    
-    printf("Sinus dari sudut %.2f derajat adalah %.2f\n", angle_degrees, sin_value);
-    
-    return 0;
+	double radian;
+    radian = bilangan * M_PI /180;
+    return sin(radian);
 }
 
 
-int hexatodeci()
+int hexatodeci(int decimal, int length, int digit)
 {
    char hexa[20];
-   int decimal = 0, length, i, digit;
+   decimal = 0;
+   int i;
 
    printf("Masukkan bilangan heksadesimal: ");
    scanf("%s", hexa);
 
    length = strlen(hexa);
 
-   for (i = 0; hexa[i] != '\0' ; i++)
+   for (i = 0; hexa[i] != NULL ; i++)
    {
       length--;
       if (hexa[i] >= 48 && hexa[i] <= 57)
@@ -64,9 +52,9 @@ int hexatodeci()
    return 0;
 }
 
-int decitohexa()
+int decitohexa(int decimal, int hasilbagi, int sisa)
 {
-	int decimal, hasilbagi, sisa;
+
     int i, j = 0;
     char hexadecimal[20];
  
@@ -95,7 +83,7 @@ int decitohexa()
     	return 0;
 }
 
-int main()
+int hexa()
 {
 	int pil;
 	printf("1. hexadecimal ke decimal\n2. decimal ke hexadecimal");
@@ -104,10 +92,10 @@ int main()
 	switch(pil)
 	{
 		case 1:
-			hexatodeci();
+			hexatodeci(decimal,length,digit);
 			break;
 		case 2:
-			decitohexa();
+			decitohexa(decimal,hasilbagi,sisa);
 			break;
 	}
 	return 0;

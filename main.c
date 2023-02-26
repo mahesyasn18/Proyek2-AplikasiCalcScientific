@@ -7,7 +7,6 @@
 #include "header\AryaKusumah_dev.h"
 #include "header\adinda_dev.h"
 #include "header\Faisal_dev.h"
-#include "header\AhmadFauzy_dev.h"
 #include "header\syira_dev.h"
 #include <ctype.h>
 #include <math.h>
