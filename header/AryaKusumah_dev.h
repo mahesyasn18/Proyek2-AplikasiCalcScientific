@@ -3,13 +3,13 @@
 #include <math.h>
 
 
-double operasiPenjumlahan(double a, double b){
+double operasiPenjumlahan(double bilangansatu, double bilangandua){
 	return a + b; 
 }
 
 //operasi modulus
-double operasiModulus (double dividend, double divisor){
-    return (int)dividend%(int)divisor;
+double operasiModulus (double bilangansatu, double bilangandua){
+    return (int)bilangansatu%(int)bilangandua;
 }
 
 
