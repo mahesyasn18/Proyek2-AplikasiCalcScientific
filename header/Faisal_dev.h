@@ -12,7 +12,7 @@ double operasiPangkat(double bilangansatu,double bilangandua){
     return total;
 }
 
-//operasi persen
+
 
 double operasipersen(double bilangan){
 	return bilangan / 100.0;
