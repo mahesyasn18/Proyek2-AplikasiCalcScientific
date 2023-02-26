@@ -9,55 +9,45 @@ double operasiPerkalian(double bilangansatu, double bilangandua){
 	return bilangansatu * bilangandua;
 }
 
-double operasiFaktorial(double angka){
+double operasiFaktorial(double bilangan){
 	int i;
 	double pembagi;
 	
-	pembagi=angka;
-	if(angka<1){
-		return (1);
-	} else{
-		for(i=1;i<pembagi;i++){
-			angka=angka*i;
-		}
-		return angka;
+	pembagi=bilangan;
+	for(i=1;i<pembagi;i++){
+		bilangan=bilangan*i;
 	}
 	
+	return bilangan;
 }
 
-double operasiSinus(double angka){
+double operasiCosinus(double bilangan){
 	double result;
-	result=sin(angka);
+	result=bilangan * M_PI /180;
+	return cos(result);
+}
+
+double operasiTangen(double bilangan){
+	double result;
+	result=bilangan * M_PI /180;
+	return tan(result);
+}
+
+double konversi_fahrenheit(double bilangan){
+	double result;
+	result=(9.0/5.0 * bilangan) + 32;
 	return result;
 }
 
-double operasiCosinus(double angka){
+double konversi_kelvin(double bilangan){
 	double result;
-	result=cos(angka);
+	result=bilangan + 273.15;
 	return result;
 }
 
-double operasiTangen(double angka){
-	double result;
-	result=tan(angka);
-	return result;
-}
-
-double konversi_fahrenheit(double angka){
-	double result;
-	result=(9.0/5.0 * angka) + 32;
-	return result;
-}
-
-double konversi_kelvin(double angka){
-	double result;
-	result=angka + 273.15;
-	return result;
-}
-
-float konversi_reamur(float angka){
+float konversi_reamur(float bilangan){
 	float result;
-	result=angka * (4.0/5.0) ;
+	result=bilangan * (4.0/5.0) ;
 	return result;
 }
 

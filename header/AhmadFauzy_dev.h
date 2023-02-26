@@ -1,19 +1,12 @@
 #ifndef AhmadFauzy_dev_h
 #define AhmadFauzy_dev_h
  
-// function pwmbagian
-//void inputPembagian(int *a, int *b){
-//	scanf("%d", &(*a));
-//	scanf("%d", &(*b));
-//}
 
-double operasiPembagian(double x, double y){
-	return (x / y);
+
+double operasiPembagian(double bilangansatu, double bilangandua){
+	return (bilangansatu / bilangandua);
 }
 
-//void outputPembagian(int h, int i, float j){
-//	printf(" hasil %d / %d = %1f", h,i,hasil);
-//}
 
 //modul turunan
 #include <math.h>
@@ -48,26 +41,18 @@ void output(double x){
 //	return 0;
 //}
 
-//modul Logaritma
-//void InputLogaritma(float *a, float *b){
-//	printf("masukan basis :");
-//	scanf("%f",&(*a));
-//	printf("masukan numerus :");
-//	scanf("%f",&(*b));
-//}
 
-double operasiLogaritma(double angka1, double angka2){
-	if (angka2 <= 0 || angka1 <= 0) {
+
+double operasiLogaritma(double bilangansatu, double bilangandua){
+	if (bilangandua <= 0 || bilangansatu <= 0) {
         printf("Invalid input\n");
         return 1;
     }
 
-	 return log(angka2) / log(angka1);
+	 return log(bilangandua) / log(bilangansatu);
 }
 
-//void Output(float a,float b, float hasil){
-//	printf("hasil dari log_%2f(%2f) adalah %2f",b,a,hasil);
-//}
+
 
 
 #endif
