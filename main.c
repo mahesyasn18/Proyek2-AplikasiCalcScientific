@@ -75,9 +75,9 @@ double prosesPerhitunganTrigonometri(double angka, char opera[]){
         exit(1);
 	}
 }
-double prosesPerhitunganLog(double num1, double num2, char opera[]){
+double prosesPerhitunganLog(double angka1, double angka2, char opera[]){
 	if(strcmp(opera,"log(")==0){
-		return operasiLogaritma(num2,num1);
+		return operasiLogaritma(angka2,angka1);
 	}else{
 		printf("Operator Tidak Diketahui: %c", opera);
         exit(1);

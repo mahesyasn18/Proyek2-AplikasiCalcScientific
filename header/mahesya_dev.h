@@ -5,20 +5,20 @@
 #define SUDUT 180.0
 
 double operasiAkar(double angka1, double angka2) {
-   double low = 0, high = angka1, mid, prev;
+   double rendah = 0, tinggi = angka1, tengah, hasil;
 
-   while (low <= high) {
-      mid = (low + high) / 2;
-      prev = mid;
-      mid = pow(mid, angka2);
-      if (fabs(mid - angka1) < 0.00001)
-         return prev;
-      else if (mid < angka1)
-         low = prev;
+   while (rendah <= tinggi) {
+      tengah = (rendah + tinggi) / 2;
+      hasil = tengah;
+      tengah = pow(tengah, angka2);
+      if (fabs(tengah - angka1) < 0.00001)
+         return hasil;
+      else if (tengah < angka1)
+         rendah = hasil;
       else
-         high = prev;
+         tinggi = hasil;
    }
-   return prev;
+   return hasil;
 }
 
 
