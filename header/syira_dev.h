@@ -1,17 +1,12 @@
 #include <stdio.h>
 #ifndef syira_dev_H
 #define syira_dev_H
-
+#include <math.h>
+#include <string.h>
 
 double operasiPengurangan(double bilangansatu, double bilangandua){
 	return bilangansatu - bilangandua;
 }
-
-
-
-#include <stdio.h>
-#include <math.h>
-#include <string.h>
 
 
 double OperasiSinus(double bilangan)
