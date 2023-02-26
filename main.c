@@ -1,8 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
 #include "header\mahesya_dev.h"
 #include "header\AryaKusumah_dev.h"
 #include "header\adinda_dev.h"
@@ -105,7 +102,7 @@ int main(int argc, char *argv[]) {
 	scanf("%s",&inputan);
 	int i;
 	for(i=0;i<strlen(inputan);i++){
-		if (isdigit(inputan[i])) {
+		if(isdigit(inputan[i])) {
 			char num[100];
 	        int num_top = 0;
 	            while (isdigit(inputan[i]) || inputan[i] == '.') {
@@ -116,7 +113,7 @@ int main(int argc, char *argv[]) {
 	    	i--;
     	}
 		else if (inputan[i] == 's' || inputan[i] == 'c' || inputan[i] == 't'|| inputan[i] == 'a'){
-            char operator_trigono[6];
+            char operator_trigono[100];
             int j=0;
             char nomor[100];
             double bilangan;
@@ -126,7 +123,7 @@ int main(int argc, char *argv[]) {
             		nomor[top_no++] = inputan[i++];
 				}else {
 				    operator_trigono[j++] = inputan[i++];
-				    operator_trigono[6] = '\0';    
+				    operator_trigono[100] = '\0';    
 				}
 				
 			}
@@ -137,7 +134,7 @@ int main(int argc, char *argv[]) {
 			angka[index_angka]=prosesPerhitunganTrigonometri(bilangan,operator_trigono);
 		}
 		else if (inputan[i] == 'l'){
-            char operator_log[6];
+            char operator_log[100];
             int j=0;
             char nomor[100];
             double bilangan, bilangan2;
@@ -147,7 +144,7 @@ int main(int argc, char *argv[]) {
             		nomor[top_no++] = inputan[i++];
 				}else {
 				    operator_log[j++] = inputan[i++];
-				    operator_log[6] = '\0';    
+				    operator_log[100] = '\0';    
 				}
 				
 			}

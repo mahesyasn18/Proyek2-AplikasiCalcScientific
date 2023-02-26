@@ -3,14 +3,19 @@
 #include <math.h>
 #ifndef syira_dev_H
 #define syira_dev_H
-
+#include <math.h>
+#include <string.h>
 
 double operasiPengurangan(double angka1, double angka2){
 	return angka1 - angka2;
 }
 
 
+<<<<<<< HEAD
 double operasiSinus(double bilangan)
+=======
+double OperasiSinus(double bilangan)
+>>>>>>> 615c0ac438d6d20c018e9d502fdb79e0ff052887
 {
 	double radian;
     radian = bilangan * M_PI /180;
