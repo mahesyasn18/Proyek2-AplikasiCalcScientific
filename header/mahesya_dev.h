@@ -4,16 +4,16 @@
 #define PI 3.14159265358979323846	
 #define SUDUT 180.0
 
-double operasiAkar(double angka1, double angka2) {
-   double rendah = 0, tinggi = angka1, tengah, hasil;
+double operasiAkar(double bilangansatu, double bilangandua) {
+   double rendah = 0, tinggi = bilangansatu, tengah, hasil;
 
    while (rendah <= tinggi) {
       tengah = (rendah + tinggi) / 2;
       hasil = tengah;
-      tengah = pow(tengah, angka2);
-      if (fabs(tengah - angka1) < 0.00001)
+      tengah = pow(tengah, bilangandua);
+      if (fabs(tengah - bilangansatu) < 0.00001)
          return hasil;
-      else if (tengah < angka1)
+      else if (tengah < bilangansatu)
          rendah = hasil;
       else
          tinggi = hasil;
@@ -22,35 +22,33 @@ double operasiAkar(double angka1, double angka2) {
 }
 
 
-double operasiAsin(double angka){
-    if(angka>1 || angka<-1)
+double operasiAsin(double bilangan){
+    if(bilangan>1 || bilangan<-1)
     {
         printf("Diluar Jangkauan\n");
     }
     else
     {
-        return asin(angka)* SUDUT/ PI;
+        return asin(bilangan)* SUDUT/ PI;
     }
 }
 
 
 
-double operasiAcos(double angka) {
-	if(angka>1 || angka<-1)
+double operasiAcos(double bilangan) {
+	if(bilangan>1 || bilangan<-1)
     {
         printf("Diluar Jangkauan\n");
     }
     else
     {
-        double acos_in_radians = acos(angka);
-   		 return acos_in_radians * SUDUT/ PI;
+   		return acos(bilangan) * SUDUT/ PI;
     }
     
 }
 
-double operasiAtan(double x) {
-    double atan_in_radians = atan(x);
-    return atan_in_radians * SUDUT/ PI;
+double operasiAtan(double bilangan) {
+    return atan(bilangan) * SUDUT/ PI;
 }
 
 
