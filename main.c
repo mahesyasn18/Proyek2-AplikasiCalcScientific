@@ -1,8 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
 #include "header\mahesya_dev.h"
 #include "header\AryaKusumah_dev.h"
 #include "header\adinda_dev.h"
@@ -50,47 +47,45 @@ int mencariPrioritas(char operator) {
 	}
 }
 
-double prosesPerhitunganTrigonometri(double angka, char opera[]){
-	double radian;
-	radian = angka * M_PI / 180;
-	if(strcmp(opera,"sin(")==0){
-		return operasiSinus(radian);
+double prosesPerhitunganTrigonometri(double angka, char operator[]){
+	if(strcmp(operator,"sin(")==0){
+		return OperasiSinus(angka);
 	}
-	else if(strcmp(opera,"cos(")==0){
-		return operasiCosinus(radian);
+	else if(strcmp(operator,"cos(")==0){
+		return operasiCosinus(angka);
 	}
-	else if(strcmp(opera,"tan(")==0){
-		return operasiTangen(radian);
+	else if(strcmp(operator,"tan(")==0){
+		return operasiTangen(angka);
 	}
-	else if(strcmp(opera,"asin(")==0){
+	else if(strcmp(operator,"asin(")==0){
 		return operasiAsin(angka);
 	}
-	else if(strcmp(opera,"acos(")==0){
+	else if(strcmp(operator,"acos(")==0){
 		return operasiAcos(angka);
 	}
-	else if(strcmp(opera,"atan(")==0){
+	else if(strcmp(operator,"atan(")==0){
 		return operasiAtan(angka);
 	}else{
-		printf("Operator Tidak Diketahui: %s", opera);
+		printf("Operator Tidak Diketahui: %s", operator);
         exit(1);
 	}
 }
-double prosesPerhitunganLog(double num1, double num2, char opera[]){
-	if(strcmp(opera,"log(")==0){
-		return operasiLogaritma(num2,num1);
+double prosesPerhitunganLog(double angka1, double angka2, char operator[]){
+	if(strcmp(operator,"log(")==0){
+		return operasiLogaritma(angka2,angka1);
 	}else{
-		printf("Operator Tidak Diketahui: %c", opera);
+		printf("Operator Tidak Diketahui: %c", operator);
         exit(1);
 	}
 }
 
-double prosesSingleNum(double num1, char ope){
-	if(ope=='!'){
-		return operasiFaktorial(num1);
-	}else if(ope=='%'){
-		return operasipersen(num1);
+double prosesSingleNum(double angka, char operator){
+	if(operator=='!'){
+		return operasiFaktorial(angka);
+	}else if(operator=='%'){
+		return operasipersen(angka);
 	}else{
-		printf("Operator Tidak Diketahui: %c", ope);
+		printf("Operator Tidak Diketahui: %c", operator);
         exit(1);
 	}
 }
@@ -98,26 +93,26 @@ double prosesSingleNum(double num1, char ope){
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 int main(int argc, char *argv[]) {
 	char inputan[100];
-	float angka[100];
+	double angka[100];
 	int index_angka= -1;
-	char oper[100];
+	char oper[100]; 
 	int index_operator= -1;
 	printf("masukkan ekspresi: ");
 	scanf("%s",&inputan);
 	int i;
 	for(i=0;i<strlen(inputan);i++){
-		if (isdigit(inputan[i])) {
+		if(isdigit(inputan[i])) {
 			char num[100];
 	        int num_top = 0;
 	            while (isdigit(inputan[i]) || inputan[i] == '.') {
 	                num[num_top++] = inputan[i++];
 	            }
 	  		num[num_top++]='\0';
-	        angka[++index_angka] = strtof(num,NULL);
+	        angka[++index_angka] = strtod(num,NULL);
 	    	i--;
     	}
 		else if (inputan[i] == 's' || inputan[i] == 'c' || inputan[i] == 't'|| inputan[i] == 'a'){
-            char operator_trigono[6];
+            char operator_trigono[100];
             int j=0;
             char nomor[100];
             double bilangan;
@@ -127,7 +122,7 @@ int main(int argc, char *argv[]) {
             		nomor[top_no++] = inputan[i++];
 				}else {
 				    operator_trigono[j++] = inputan[i++];
-				    operator_trigono[6] = '\0';    
+				    operator_trigono[100] = '\0';    
 				}
 				
 			}
@@ -138,7 +133,7 @@ int main(int argc, char *argv[]) {
 			angka[index_angka]=prosesPerhitunganTrigonometri(bilangan,operator_trigono);
 		}
 		else if (inputan[i] == 'l'){
-            char operator_log[6];
+            char operator_log[100];
             int j=0;
             char nomor[100];
             double bilangan, bilangan2;
@@ -148,7 +143,7 @@ int main(int argc, char *argv[]) {
             		nomor[top_no++] = inputan[i++];
 				}else {
 				    operator_log[j++] = inputan[i++];
-				    operator_log[6] = '\0';    
+				    operator_log[100] = '\0';    
 				}
 				
 			}
