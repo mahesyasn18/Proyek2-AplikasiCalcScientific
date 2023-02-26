@@ -3,8 +3,8 @@
 #define syira_dev_H
 
 
-double operasiPengurangan(double bil1, double bil2){
-	return bil1 - bil2;
+double operasiPengurangan(double bilangansatu, double bilangandua){
+	return bilangansatu - bilangandua;
 }
 
 
@@ -14,20 +14,11 @@ double operasiPengurangan(double bil1, double bil2){
 #include <string.h>
 
 
-double OperasiSinus(double angle_degrees, double angle_radians,double sin_value)
+double OperasiSinus(double bilangan)
 {
-    
-    printf("Masukkan sudut dalam derajat: ");
-    scanf("%lf", &angle_degrees);
-    
-    // Konversi sudut dari derajat ke radian
-    angle_radians = angle_degrees * M_PI / 180.0;
-    
-    sin_value = sin(angle_radians);
-    
-    printf("Sinus dari sudut %.2f derajat adalah %.2f\n", angle_degrees, sin_value);
-    
-    return 0;
+	double angle_radians;
+    angle_radians = bilangan * M_PI /180;
+    return sin(angle_radians);
 }
 
 
@@ -95,7 +86,7 @@ int decitohexa()
     	return 0;
 }
 
-int main()
+int hexa()
 {
 	int pil;
 	printf("1. hexadecimal ke decimal\n2. decimal ke hexadecimal");

@@ -4,18 +4,18 @@
 
 //operasi pangkat
 	
-double operasiPangkat(double x,double y){
+double operasiPangkat(double bilangansatu,double bilangandua){
     double a,total=1;
-     for(a=1;a<=y;a++){
-        total=total*x;
+     for(a=1;a<=bilangandua;a++){
+        total=total*bilangansatu;
     }
     return total;
 }
 
 //operasi persen
 
-double operasipersen(double num){
-	return num / 100.0;
+double operasipersen(double bilangan){
+	return bilangan / 100.0;
 }
 
 #endif
