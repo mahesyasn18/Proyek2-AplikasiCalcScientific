@@ -7,7 +7,7 @@
 //	scanf("%d", &(*b));
 //}
 
-float prosesPembagian(int x, int y){
+double operasiPembagian(double x, double y){
 	return (x / y);
 }
 
@@ -18,8 +18,8 @@ float prosesPembagian(int x, int y){
 //modul turunan
 #include <math.h>
 #define delta 0.000001
-float input(double *x){
-	float i;
+double input(double *x){
+	double i;
 	printf("menacari nilai turunan dari fungsi x^3 + x^2 + x + 1\n");
 	printf("masukan nilai x =");
 	scanf ("%f",&i);
@@ -56,14 +56,13 @@ void output(double x){
 //	scanf("%f",&(*b));
 //}
 
-float operasi(float a, float b){
-	if (b <= 0 || a <= 0) {
+double operasiLogaritma(double angka1, double angka2){
+	if (angka2 <= 0 || angka1 <= 0) {
         printf("Invalid input\n");
         return 1;
     }
 
-	 return log(b) / log(a);
-//	 return hasil;
+	 return log(angka2) / log(angka1);
 }
 
 //void Output(float a,float b, float hasil){

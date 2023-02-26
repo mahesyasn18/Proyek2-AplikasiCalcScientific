@@ -3,7 +3,7 @@
 #define syira_dev_H
 
 
-int pengurangan(int bil1, int bil2){
+double operasiPengurangan(double bil1, double bil2){
 	return bil1 - bil2;
 }
 
