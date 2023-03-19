@@ -4,7 +4,6 @@
 #include "header\AryaKusumah_dev.h"
 #include "header\adinda_dev.h"
 #include "header\Faisal_dev.h"
-#include "header\AhmadFauzy_dev.h"
 #include "header\syira_dev.h"
 #include <ctype.h>
 #include <math.h>
@@ -51,7 +50,7 @@ int mencariPrioritas(char operator) {
 //fungsi untuk mengarahkan kepada proses perhitungan khusus untuk Trigonometri
 double prosesPerhitunganTrigonometri(double angka, char operator[]){
 	if(strcmp(operator,"sin(")==0){
-		return OperasiSinus(angka);
+		return operasiSinus(angka);
 	}
 	else if(strcmp(operator,"cos(")==0){
 		return operasiCosinus(angka);
@@ -131,9 +130,9 @@ double prosesSingleNum(double angka, char operator){
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 int main(int argc, char *argv[]) {
 	char inputan[100];
-	double angka[100];
+	float angka[100];
 	int index_angka= -1;
-	char oper[100]; 
+	char oper[100];
 	int index_operator= -1;
 	printf("masukkan ekspresi: ");
 	scanf("%s",&inputan);
@@ -146,7 +145,7 @@ int main(int argc, char *argv[]) {
 	                num[num_top++] = inputan[i++];
 	            }
 	  		num[num_top++]='\0';
-	        angka[++index_angka] = strtod(num,NULL);
+	        angka[++index_angka] = strtof(num,NULL);
 	    	i--;
     	}
 		else if (inputan[i] == 's' || inputan[i] == 'c' || inputan[i] == 't'|| inputan[i] == 'a'||inputan[i] == 'S' || inputan[i] == 'C' || inputan[i] == 'T'|| inputan[i] == 'A'){

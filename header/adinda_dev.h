@@ -8,18 +8,6 @@ double operasiPerkalian(double bilangansatu, double bilangandua){
 	return bilangansatu * bilangandua;
 }
 
-double operasiFaktorial(double bilangan){
-	int i;
-	double pembagi;
-	
-	pembagi=bilangan;
-	for(i=1;i<pembagi;i++){
-		bilangan=bilangan*i;
-	}
-	
-	return bilangan;
-}
-
 double operasiCosinus(double bilangan){
 	double result;
 	result=bilangan * M_PI /180;

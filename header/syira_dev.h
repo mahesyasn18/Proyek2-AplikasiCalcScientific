@@ -1,26 +1,71 @@
-#include <stdio.h>
 #ifndef syira_dev_H
 #define syira_dev_H
 #include <math.h>
 #include <string.h>
+#include "adinda_dev.h"
 
-double operasiPengurangan(double bilangansatu, double bilangandua){
+double operasiPengurangan(double bilangansatu, double bilangandua ){
 	return bilangansatu - bilangandua;
 }
 
-
-double OperasiSinus(double bilangan)
+double operasiSinus(double bilangan)
 {
-	double angle_radians;
-    angle_radians = bilangan * M_PI /180;
-    return sin(angle_radians);
+	double radian;
+    radian = bilangan * M_PI /180;
+    return sin(radian);
 }
+
+
+double operasiFaktorial(double bilangan){
+	int i;
+	double pembagi;
+	
+	pembagi=bilangan;
+	for(i=1;i<pembagi;i++){
+		bilangan=operasiPerkalian(bilangan,i);
+	}
+	
+	return bilangan;
+}
+
+
+//void Push(char huruf){
+//	X = (address) malloc (sizeof (hrf));
+//	if(X == NULL){
+//		printf("alokasi gagal");
+//	}else{
+//	X->info = huruf;
+//	X->next = NULL;
+//		if(Top == NULL){
+//			Top = X;
+//		}
+//		else{
+//			X->next = Top;
+//			Top = X;
+//		}
+//	}
+//
+//}
+//
+//int Pop(){
+//		if(Top != NULL){
+//			Y = Top;
+//			Top = Top->next;
+//			Y->next = NULL;
+//			free(Y);
+//		}else{
+//			free(Top);
+//		}
+//		return 0;
+//	}
 
 
 int hexatodeci()
 {
-   char hexa[20];
-   int decimal = 0, length, i, digit;
+	int decimal, length, digit;
+	char hexa[20];
+	decimal = 0;
+	int i;
 
    printf("Masukkan bilangan heksadesimal: ");
    scanf("%s", hexa);

@@ -9,10 +9,6 @@ double operasiPembagian(double bilangansatu, double bilangandua){
 }
 
 
-//modul turunan
-
-
-
 double operasiLogaritma(double bilangansatu, double bilangandua){
 	if (bilangandua <= 0 || bilangansatu <= 0) {
         printf("Invalid input\n");
