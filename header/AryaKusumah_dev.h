@@ -7,7 +7,6 @@ double operasiPenjumlahan(double bilangansatu, double bilangandua){
 	return bilangansatu + bilangandua; 
 }
 
-//operasi modulus
 double operasiModulus (double bilangansatu, double bilangandua){
     return (int)bilangansatu%(int)bilangandua;
 }
