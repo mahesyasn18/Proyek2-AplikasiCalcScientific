@@ -40,26 +40,44 @@ double operasiCosinus(double bilangan){ // menghitung nilai cosinus dari suatu s
 
 double operasiTangen(double bilangan){
 	double result;
-	result=operasiPembagian(operasiSinus(bilangan),operasiCosinus(bilangan)); //tangen merupakan hasil bagi sin dengan cos
-	return (result);
+	if(bilangan==90 || bilangan==270){
+		printf("Not Defined \n");
+	} else{
+		result=operasiPembagian(operasiSinus(bilangan),operasiCosinus(bilangan)); //tangen merupakan hasil bagi sin dengan cos
+		return (result);
+	}
+	
 }
 
 double operasiCosecan(double bilangan){
 	double result;
-	result=operasiPembagian(1,operasiSinus(bilangan)); // cosecan merupakan satu per dari sinus
-	return (result);
+	if(bilangan==0 || bilangan==180 || bilangan==360){
+		printf("Not Defined \n");
+	} else{
+		result=operasiPembagian(1,operasiSinus(bilangan)); // cosecan merupakan satu per dari sinus
+		return (result);
+	}
+
 }
 
 double operasiSecan(double bilangan){
 	double result;
-	result=operasiPembagian(1,operasiCosinus(bilangan)); // secan merupakan satu per dari cosinus
-	return (result);
+	if(bilangan==90 || bilangan==270){
+		printf("Not Defined \n");
+	} else{
+		result=operasiPembagian(1,operasiCosinus(bilangan)); //tangen merupakan hasil bagi sin dengan cos
+		return (result);
+	}
 }
 
 double operasiCotangen(double bilangan){
 	double result;
-	result=operasiPembagian(1,operasiTangen(bilangan)); // cotangen merupakan satu per dari tangen
-	return (result);
+	if(bilangan==0 || bilangan==180 || bilangan==360){
+		printf("Not Defined \n");
+	} else{
+		result=operasiPembagian(1,operasiTangen(bilangan)); // cosecan merupakan satu per dari sinus
+		return (result);
+	}
 }
 
 double konversi_fahrenheit(double bilangan){
