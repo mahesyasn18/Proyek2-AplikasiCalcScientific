@@ -22,8 +22,8 @@ double operasiFaktorial(double bilangan){
 	return bilangan;
 }
 
-double sinus(double derajat){ // menghitung nilai sinus dari suatu sudut
-	double radian=derajat*(PI/180); // inputan menggunakan satuan derajat sehigga perlu dikonversi terlebih dahulu menuju radian
+double operasiSinus(double bilangan){ // menghitung nilai sinus dari suatu sudut
+	double radian=bilangan*(PI/180); // inputan menggunakan satuan derajat sehigga perlu dikonversi terlebih dahulu menuju radian
 	double jumlah=0.0; // untuk menghitung nilai jumlah semua sukunya
 	double nilaipersuku=radian; // nilaipersuku adalah nilai yang dihasilkan pengoperasian per sukunya
 	
@@ -36,8 +36,8 @@ double sinus(double derajat){ // menghitung nilai sinus dari suatu sudut
     return jumlah;
 }
 
-double operasiCosinus(double derajat){ // menghitung nilai cosinus dari suatu sudut
-	double radian=derajat*(PI/180); // inputan menggunakan satuan derajat sehigga perlu dikonversi terlebih dahulu menuju radian
+double operasiCosinus(double bilangan){ // menghitung nilai cosinus dari suatu sudut
+	double radian=bilangan*(PI/180); // inputan menggunakan satuan derajat sehigga perlu dikonversi terlebih dahulu menuju radian
 	double jumlah=0.0; // untuk menghitung nilai jumlah semua sukunya
 	double nilaipersuku=1; // nilaipersuku adalah nilai yang dihasilkan pengoperasian per sukunya
 	
@@ -52,26 +52,44 @@ double operasiCosinus(double derajat){ // menghitung nilai cosinus dari suatu su
 
 double operasiTangen(double bilangan){
 	double result;
-	result=operasiPembagian(sinus(bilangan),operasiCosinus(bilangan)); //tangen merupakan hasil bagi sin dengan cos
-	return (result);
+	if(bilangan==90 || bilangan==270){
+		printf("Not Defined \n");
+	} else{
+		result=operasiPembagian(operasiSinus(bilangan),operasiCosinus(bilangan)); //tangen merupakan hasil bagi sin dengan cos
+		return (result);
+	}
+	
 }
 
 double operasiCosecan(double bilangan){
 	double result;
-	result=operasiPembagian(1,sinus(bilangan)); // cosecan merupakan satu per dari sinus
-	return (result);
+	if(bilangan==0 || bilangan==180 || bilangan==360){
+		printf("Not Defined \n");
+	} else{
+		result=operasiPembagian(1,operasiSinus(bilangan)); // cosecan merupakan satu per dari sinus
+		return (result);
+	}
+
 }
 
 double operasiSecan(double bilangan){
 	double result;
-	result=operasiPembagian(1,operasiCosinus(bilangan)); // secan merupakan satu per dari cosinus
-	return (result);
+	if(bilangan==90 || bilangan==270){
+		printf("Not Defined \n");
+	} else{
+		result=operasiPembagian(1,operasiCosinus(bilangan)); //tangen merupakan hasil bagi sin dengan cos
+		return (result);
+	}
 }
 
 double operasiCotangen(double bilangan){
 	double result;
-	result=operasiPembagian(1,operasiTangen(bilangan)); // cotangen merupakan satu per dari tangen
-	return (result);
+	if(bilangan==0 || bilangan==180 || bilangan==360){
+		printf("Not Defined \n");
+	} else{
+		result=operasiPembagian(1,operasiTangen(bilangan)); // cosecan merupakan satu per dari sinus
+		return (result);
+	}
 }
 
 double konversi_fahrenheit(double bilangan){
