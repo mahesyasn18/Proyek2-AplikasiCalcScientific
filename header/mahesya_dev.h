@@ -37,7 +37,7 @@ double operasiAkar(double bilangansatu, double bilangandua) {
 double operasiAsin(double bilangan){
     if(bilangan>1 || bilangan<-1)
     {
-        printf("Diluar Jangkauan\n");
+        printf("not define\n");
     }
     else
     {
@@ -50,11 +50,11 @@ double operasiAsin(double bilangan){
 double operasiAcos(double bilangan) {
 	if(bilangan>1 || bilangan<-1)
     {
-        printf("Diluar Jangkauan\n");
+        printf("not define\n");
     }
     else
     {
-   		return acos(bilangan) * SUDUT/ PI;
+		return acos(bilangan)*SUDUT/ PI;
     }
     
 }

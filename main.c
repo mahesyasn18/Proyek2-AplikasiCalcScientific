@@ -66,6 +66,12 @@ double prosesPerhitunganTrigonometri(double angka, char operator[]){
 	}
 	else if(strcmp(operator,"atan(")==0){
 		return operasiAtan(angka);
+	}else if(strcmp(operator,"csc(")==0){
+		return operasiCosecan(angka);
+	}else if(strcmp(operator,"sec(")==0){
+		return operasiSecan(angka);
+	}else if(strcmp(operator,"cot(")==0){
+		return operasiCotangen(angka);
 	}else{
 		if(strcmp(operator,"SIN")==0||strcmp(operator,"SIN(")==0||strcmp(operator,"sin")==0){
 			printf("Error, operator yang anda masukkan: %s, seharusnya sin(...), contoh sin(60)", operator);
@@ -79,6 +85,12 @@ double prosesPerhitunganTrigonometri(double angka, char operator[]){
 			printf("Error, operator yang anda masukkan: %s, seharusnya acos(...), contoh acos(0.5)", operator);
 		}else if(strcmp(operator,"ATAN")==0||strcmp(operator,"ATAN(")==0||strcmp(operator,"atan")==0){
 			printf("Error, operator yang anda masukkan: %s, seharusnya atan(...), contoh atan(0.5)", operator);
+		}else if(strcmp(operator,"CSC")==0||strcmp(operator,"CSC(")==0||strcmp(operator,"csc")==0){
+			printf("Error, operator yang anda masukkan: %s, seharusnya csc(...), contoh csc(40)", operator);
+		}else if(strcmp(operator,"SEC")==0||strcmp(operator,"SEC(")==0||strcmp(operator,"sec")==0){
+			printf("Error, operator yang anda masukkan: %s, seharusnya sec(...), contoh sec(0.5)", operator);
+		}else if(strcmp(operator,"COT")==0||strcmp(operator,"COT(")==0||strcmp(operator,"cot")==0){
+			printf("Error, operator yang anda masukkan: %s, seharusnya COT(...), contoh cot(0.5)", operator);
 		}else{
 			printf("Operator Tidak Diketahui: %s", operator);
 		}
