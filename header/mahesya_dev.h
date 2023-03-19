@@ -3,25 +3,34 @@
 #include<math.h>
 #define PI 3.14159265358979323846	
 #define SUDUT 180.0
+#include "Faisal_dev.h"
+#include "AryaKusumah_dev.h"
+#include "AhmadFauzy_dev.h"
+#include "adinda_dev.h"
+#include "syira_dev.h"
 
+//fungsi operasi akar
 double operasiAkar(double bilangansatu, double bilangandua) {
    double rendah = 0, tinggi = bilangansatu, tengah, hasil;
-
+	
    while (rendah <= tinggi) {
-      tengah = (rendah + tinggi) / 2;
-      hasil = tengah;
-      tengah = pow(tengah, bilangandua);
-      if (fabs(tengah - bilangansatu) < 0.00001)
-         return hasil;
-      else if (tengah < bilangansatu)
-         rendah = hasil;
-      else
-         tinggi = hasil;
+   	//memanggil fungsi operasiPembagian pada AhmadFauzy_dev.h 
+    tengah = operasiPembagian(operasiPenjumlahan(rendah, tinggi),2);
+    hasil = tengah;
+    //memanggil fungsi operasiPangkat pada Faisal_dev.h 
+    tengah = operasiPangkat(tengah, bilangandua);
+    //memanggil fungsi untuk mencari nilai absolute dari hasil pengurangan nilai pada tengah dan bilangansatu lalu dibandingkan dengan 0.00001
+    if (fabs(operasiPengurangan(tengah,bilangansatu)) < 0.00001)
+        return hasil;
+    else if (tengah < bilangansatu)
+        rendah = hasil;
+    else
+        tinggi = hasil;
    }
    return hasil;
 }
 
-
+//fungsi operasi Asin
 double operasiAsin(double bilangan){
     if(bilangan>1 || bilangan<-1)
     {
@@ -34,7 +43,7 @@ double operasiAsin(double bilangan){
 }
 
 
-
+//fungsi operasi Acos
 double operasiAcos(double bilangan) {
 	if(bilangan>1 || bilangan<-1)
     {
@@ -46,7 +55,7 @@ double operasiAcos(double bilangan) {
     }
     
 }
-
+//fungsi operasi Atan
 double operasiAtan(double bilangan) {
     return atan(bilangan) * SUDUT/ PI;
 }

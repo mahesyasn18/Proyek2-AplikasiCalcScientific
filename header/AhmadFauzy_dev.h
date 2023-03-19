@@ -18,8 +18,16 @@ double operasiLogaritma(double bilangansatu, double bilangandua){
         printf("Invalid input\n");
         return 1;
     }
-
 	 return log(bilangandua) / log(bilangansatu);
+}
+
+double operasiLogaritmaBasis10(double bilangansatu){
+	if (bilangansatu <= 0) {
+        printf("Invalid input\n");
+        return 1;
+    }
+
+	 return log10(bilangansatu);
 }
 
 
