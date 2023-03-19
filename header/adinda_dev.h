@@ -3,7 +3,7 @@
 #ifndef adinda_dev_H
 #define adinda_dev_H
 #define PI 3.14159265358979323846
-#include "header\AhmadFauzy_dev.h"
+#include "D:\College\Proyek 2\kalkuscience\Proyek2-AplikasiCalcScientific\header\AhmadFauzy_dev.h"
 
 
 double operasiPerkalian(double bilangansatu, double bilangandua){
@@ -36,7 +36,7 @@ double sinus(double derajat){ // menghitung nilai sinus dari suatu sudut
     return jumlah;
 }
 
-double operasiCosinus(double bilangan){ // menghitung nilai cosinus dari suatu sudut
+double operasiCosinus(double derajat){ // menghitung nilai cosinus dari suatu sudut
 	double radian=derajat*(PI/180); // inputan menggunakan satuan derajat sehigga perlu dikonversi terlebih dahulu menuju radian
 	double jumlah=0.0; // untuk menghitung nilai jumlah semua sukunya
 	double nilaipersuku=1; // nilaipersuku adalah nilai yang dihasilkan pengoperasian per sukunya
@@ -52,25 +52,25 @@ double operasiCosinus(double bilangan){ // menghitung nilai cosinus dari suatu s
 
 double operasiTangen(double bilangan){
 	double result;
-	result=operasiPembagian(sinus/operasiCosinus); //tangen merupakan hasil bagi sin dengan cos
+	result=operasiPembagian(sinus(bilangan),operasiCosinus(bilangan)); //tangen merupakan hasil bagi sin dengan cos
 	return (result);
 }
 
 double operasiCosecan(double bilangan){
 	double result;
-	result=operasiPembagian(1/sinus); // cosecan merupakan satu per dari sinus
+	result=operasiPembagian(1,sinus(bilangan)); // cosecan merupakan satu per dari sinus
 	return (result);
 }
 
 double operasiSecan(double bilangan){
 	double result;
-	result=operasiPembagian(1/operasiCosinus); // secan merupakan satu per dari cosinus
+	result=operasiPembagian(1,operasiCosinus(bilangan)); // secan merupakan satu per dari cosinus
 	return (result);
 }
 
 double operasiCotangen(double bilangan){
 	double result;
-	result=operasiPembagian(1/operasiTangen); // cotangen merupakan satu per dari tangen
+	result=operasiPembagian(1,operasiTangen(bilangan)); // cotangen merupakan satu per dari tangen
 	return (result);
 }
 
