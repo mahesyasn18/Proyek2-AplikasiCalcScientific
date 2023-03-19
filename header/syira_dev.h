@@ -6,35 +6,72 @@
 #include <math.h>
 #include <string.h>
 
-double operasiPengurangan(double angka1, double angka2){
-	return angka1 - angka2;
+double operasiPengurangan(double bilangansatu, double bilangandua ){
+	return bilangansatu - bilangandua;
 }
 
-
-<<<<<<< HEAD
 double operasiSinus(double bilangan)
-=======
-double OperasiSinus(double bilangan)
->>>>>>> 615c0ac438d6d20c018e9d502fdb79e0ff052887
 {
 	double radian;
     radian = bilangan * M_PI /180;
     return sin(radian);
 }
 
+double operasiFaktorial(double factorial){
+	int i, n;
+	n = factorial;
+	factorial = 1;
+	for (i = 1; i <= n; ++i)
+    {
+    	factorial *= i;
+    }
+}
 
-int hexatodeci(int decimal, int length, int digit)
+
+void Push(char huruf){
+	X = (address) malloc (sizeof (hrf));
+	if(X == NULL){
+		printf("alokasi gagal");
+	}else{
+	X->info = huruf;
+	X->next = NULL;
+		if(Top == NULL){
+			Top = X;
+		}
+		else{
+			X->next = Top;
+			Top = X;
+		}
+	}
+
+}
+
+int Pop(){
+		if(Top != NULL){
+			Y = Top;
+			Top = Top->next;
+			Y->next = NULL;
+			free(Y);
+		}else{
+			free(Top);
+		}
+		return 0;
+	}
+
+
+int hexatodeci()
 {
-   char hexa[20];
-   decimal = 0;
-   int i;
+	int decimal, length, digit;
+	char hexa[20];
+	decimal = 0;
+	int i;
 
    printf("Masukkan bilangan heksadesimal: ");
    scanf("%s", hexa);
 
    length = strlen(hexa);
 
-   for (i = 0; hexa[i] != NULL ; i++)
+   for (i = 0; hexa[i] != '\0' ; i++)
    {
       length--;
       if (hexa[i] >= 48 && hexa[i] <= 57)
@@ -57,9 +94,9 @@ int hexatodeci(int decimal, int length, int digit)
    return 0;
 }
 
-int decitohexa(int decimal, int hasilbagi, int sisa)
+int decitohexa()
 {
-
+	int decimal, hasilbagi, sisa;
     int i, j = 0;
     char hexadecimal[20];
  
@@ -97,10 +134,10 @@ int hexa()
 	switch(pil)
 	{
 		case 1:
-			hexatodeci(decimal,length,digit);
+			hexatodeci();
 			break;
 		case 2:
-			decitohexa(decimal,hasilbagi,sisa);
+			decitohexa();
 			break;
 	}
 	return 0;
