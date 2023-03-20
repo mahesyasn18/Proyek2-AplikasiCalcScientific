@@ -3,7 +3,7 @@
 ## 💻 Clone Repository
 ### Clone Repository
 ```bash
-git clone https://github.com/garlleeen/pmwpolban.git
+git clone https://github.com/mahesyasn18/Proyek2-AplikasiCalcScientific.git
 ```
 ```bash
 cd Proyek2-AplikasiCalcScientific
