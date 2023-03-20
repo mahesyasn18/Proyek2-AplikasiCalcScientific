@@ -6,12 +6,12 @@
 git clone https://github.com/garlleeen/pmwpolban.git
 ```
 ```bash
-cd pmwpolban
+cd Proyek2-AplikasiCalcScientific
 ```
 
 ## 📥 Push Repository
 ```bash
-git add .
+git add . or git add filename or git add folder/filename
 ```
 ```bash
 git commit -m "FEAT : Description"
