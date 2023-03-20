@@ -25,5 +25,5 @@ Commit Information :
 - DEL (Delete folder, file, or code)
 
 ```bash
-git push -u origin branch-name
+git push origin branch-name
 ```
