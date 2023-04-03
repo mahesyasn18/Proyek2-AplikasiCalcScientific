@@ -9,24 +9,48 @@ double operasiPembagian(double bilangansatu, double bilangandua){
 }
 
 
-double operasiLogaritma(double bilangansatu, double bilangandua){
-	if (bilangandua <= 0 || bilangansatu <= 0) {
+
+double operasiLogaritma(double bilangansatu, double bilangandua) {
+    double HasilPembagian = bilangandua;
+    double sisa;
+    double Hasil = 0;
+
+    if (bilangandua <= 0 || bilangansatu <= 0) {
         printf("Invalid input\n");
+        return 0.0/0.0;
+    } else if (bilangansatu == bilangandua) {
         return 1;
+    } else {
+        while (HasilPembagian >= bilangansatu) {
+                HasilPembagian /= bilangansatu;
+                Hasil += 1;
+        }
+        if(HasilPembagian != 1){
+        	Hasil+=HasilPembagian/bilangansatu;
+		}
     }
-	 return log(bilangandua) / log(bilangansatu);
+
+    return Hasil;
 }
 
 double operasiLogaritmaBasis10(double bilangansatu){
-	if (bilangansatu <= 0) {
+double HasilPembagian = bilangansatu;
+    double Hasil = 0;
+
+    if (bilangansatu <= 0) {
         printf("Invalid input\n");
-        return 1;
+        return 0.0/0.0;
+    } else {
+        while (HasilPembagian >= 10) {
+                HasilPembagian /= 10;
+                Hasil += 1;
+        }
+        if(HasilPembagian != 1){
+        	Hasil+=HasilPembagian/10;
+		}
     }
-
-	 return log10(bilangansatu);
+	return Hasil;
 }
-
-
 
 
 #endif

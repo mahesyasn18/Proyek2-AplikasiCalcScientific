@@ -11,18 +11,25 @@
 //fungsi untuk mengarahkan kepada proses perhitungan yang memerlukan operator aritmatika
 double prosesPerhitungan(double angka1, double angka2, char operator) {
     switch (operator) {
+    	//operasi & untuk operasi Modulus 
     	case '&':
             return operasiModulus(angka1, angka2);
+        //operasi ^ untuk operasi Pangkat
         case '^':
             return operasiPangkat(angka1, angka2);
+        //operasi v untuk operasi akar (dengan pangkat dinamis)
         case 'v':
 			return operasiAkar(angka2, angka1);
+		//operasi * untuk operasi perkalian
         case '*':
             return operasiPerkalian(angka1, angka2);
+        //operasi / untuk operasi pembagian
         case '/':
             return operasiPembagian(angka1, angka2);
+        //operasi + untuk operasi pertambahan
         case '+':
             return operasiPenjumlahan(angka1, angka2);
+        //operasi - untuk operasi pengurangan
         case '-':
             return operasiPengurangan(angka1, angka2);
         default:
@@ -51,20 +58,15 @@ int mencariPrioritas(char operator) {
 double prosesPerhitunganTrigonometri(double angka, char operator[]){
 	if(strcmp(operator,"sin(")==0){
 		return operasiSinus(angka);
-	}
-	else if(strcmp(operator,"cos(")==0){
+	}else if(strcmp(operator,"cos(")==0){
 		return operasiCosinus(angka);
-	}
-	else if(strcmp(operator,"tan(")==0){
+	}else if(strcmp(operator,"tan(")==0){
 		return operasiTangen(angka);
-	}
-	else if(strcmp(operator,"asin(")==0){
+	}else if(strcmp(operator,"asin(")==0){
 		return operasiAsin(angka);
-	}
-	else if(strcmp(operator,"acos(")==0){
+	}else if(strcmp(operator,"acos(")==0){
 		return operasiAcos(angka);
-	}
-	else if(strcmp(operator,"atan(")==0){
+	}else if(strcmp(operator,"atan(")==0){
 		return operasiAtan(angka);
 	}else if(strcmp(operator,"csc(")==0){
 		return operasiCosecan(angka);
@@ -133,6 +135,8 @@ double prosesSingleNum(double angka, char operator){
 		return operasiFaktorial(angka);
 	}else if(operator=='%'){
 		return operasipersen(angka);
+	}else if(operator=='v'){
+		return operasiAkardua(angka);
 	}else{
 		printf("Operator Tidak Diketahui: %c", operator);
         exit(1);
@@ -161,6 +165,10 @@ int main(int argc, char *argv[]) {
 	    	i--;
     	}
 		else if (inputan[i] == 's' || inputan[i] == 'c' || inputan[i] == 't'|| inputan[i] == 'a'||inputan[i] == 'S' || inputan[i] == 'C' || inputan[i] == 'T'|| inputan[i] == 'A'){
+			if(isdigit(inputan[i-1])){
+				printf("Error, Seharusnya terdapat operator lain sebelum menggunakan operator trigonometri contoh 3+sin(40)");
+				exit(1);
+			}
             char operator_trigono[100];
             int j=0;
             char nomor[100];
@@ -224,6 +232,40 @@ int main(int argc, char *argv[]) {
             bilangan = angka[index_angka];
             char opera = oper[index_operator--];
             angka[index_angka]=prosesSingleNum(bilangan, opera);
+        }else if (inputan[i] == 'v') {
+            oper[++index_operator] = inputan[i];
+            char nomor[100] ;
+			double bilangan,bilangan2;
+            int top_no = 0;
+            
+            if(!isdigit(inputan[--i])){
+	            i=i+2;
+	            while(isdigit(inputan[i])){
+			        if(isdigit(inputan[i])||inputan[i]=='.'){
+			            	nomor[top_no++] = inputan[i++];
+					}		
+				}	
+				nomor[top_no] = '\0';
+				angka[++index_angka] = strtod(nomor, NULL);
+				bilangan = angka[index_angka];
+				
+				char opera = oper[index_operator--];
+				angka[index_angka]=prosesSingleNum(bilangan, opera);
+			}else{
+				i=i+2;
+	            while(isdigit(inputan[i])){
+			        if(isdigit(inputan[i])||inputan[i]=='.'){
+			            	nomor[top_no++] = inputan[i++];
+					}		
+				}	
+				nomor[top_no] = '\0';
+				angka[++index_angka] = strtod(nomor, NULL);
+				bilangan = angka[index_angka--];
+				bilangan2 = angka[index_angka];
+				char opera = oper[index_operator--];
+				angka[index_angka]=prosesPerhitungan(bilangan2, bilangan, opera);
+			}
+            
         }else if (inputan[i] == '%') {
             oper[++index_operator] = inputan[i];
             double bilangan;
@@ -235,13 +277,21 @@ int main(int argc, char *argv[]) {
             oper[++index_operator] = inputan[i];
         }
 		else if (inputan[i] == ')') {
-            while (oper[index_operator] != '(') {
-                double num2 = angka[index_angka--];
-                double num1 = angka[index_angka--];
-                char operator = oper[index_operator--];
-                angka[++index_angka] = prosesPerhitungan(num1, num2, operator);
-            }
-            index_operator--;
+			if(oper[index_operator] != '('){
+				while (oper[index_operator] != '(') {
+	                double num2 = angka[index_angka--];
+	                double num1 = angka[index_angka--];
+	                char operator = oper[index_operator--];
+	                angka[++index_angka] = prosesPerhitungan(num1, num2, operator);
+            	}
+            	index_operator--;
+			}else{
+				printf("Error, Operator Tidak Diketahui: )");
+			}
+				
+			
+            
+            
         }else {
             while (index_operator >= 0 && mencariPrioritas(oper[index_operator]) >= mencariPrioritas(inputan[i])) {
                 double angka2 = angka[index_angka--];
@@ -260,6 +310,7 @@ int main(int argc, char *argv[]) {
 	    angka[++index_angka] = prosesPerhitungan(angka1, angka2, opera);
 	}
 	
+	//menampilkan hasil
 	printf("hasil: %g\n", angka[0]);
 	
 	return 0;
