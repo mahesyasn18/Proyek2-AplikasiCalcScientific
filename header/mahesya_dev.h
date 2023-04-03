@@ -33,6 +33,10 @@ double operasiAkar(double bilangansatu, double bilangandua) {
    return hasil;
 }
 
+double operasiAkardua(double bilangan){
+	return sqrt(bilangan);
+}
+
 //fungsi operasi Asin
 double operasiAsin(double bilangan){
     if(bilangan>1 || bilangan<-1)

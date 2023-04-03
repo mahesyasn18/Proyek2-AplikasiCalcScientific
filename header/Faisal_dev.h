@@ -12,11 +12,12 @@
  dengan pangkat bilangandua.*/
 
 double operasiPangkat(double bilangansatu,double bilangandua){
-    double a,total=1;
-    for(a=1;a<=bilangandua;a++){
-        total = operasiPerkalian(total, bilangansatu);// menggunakan fungsi operasiPerkalian dari adinda_dev.h
-    }
-    return total;
+//    double a,total=1;
+//    for(a=0;a<bilangandua;a++){
+//        total = operasiPerkalian(total, bilangansatu);// menggunakan fungsi operasiPerkalian dari adinda_dev.h
+//    }
+    return pow(bilangansatu, bilangandua);
+
 }
 
 //operasipersen
